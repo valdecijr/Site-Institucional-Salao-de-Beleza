@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Exemplo Esmalteria</title>
+    <style type="text/css">
+        * { font-family: Tahoma,Arial,Helvetica,sans-serif; padding: 0; margin: 0; }
+        .modeloLogin { border: 1px solid #5fc6bf; max-width: 450px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; margin: 4% auto; -webkit-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.64); -moz-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.64); box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.64); }
+        h1 { font-size: 20px; font-weight: normal; background: url("img/papel-parede.png"); position: relative; border-bottom: 1px solid #5fc6bf; }
+        .logoGamarca { display: block; width: 160px; height: 40px; padding: 5px 0; margin: 0 auto; background: url("img/logotipo.png") 0 -70px; }
+        .exemplo { position: absolute; right: 5px; top: 18px;; font-size: 10px; }
+        .contentSite { padding: 20px; }
+        .campos { margin-bottom: 20px; }
+            .campos label { display: inline-block; font-size: 14px; color: #666; width: 70px; padding-right: 10px; text-align: right; }
+            .campos select { border: 1px solid #999; width: 314px; color: #666; padding: 2px !important; height: auto !important; }
+            .campos input.data { border: 1px solid #999; color: #666; padding: 5px; }
+        .botoes { text-align: right; }
+            .botoes .submit { cursor: pointer; background: #5fc6bf; width: 95px; text-align: center; font-size: 14px; color: #fff; padding: 8px; font-weight: bold; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border: 0; }
+        body { background-color: #FFF!important; }
+        #content { margin: auto; width: 980px; }
+            #content iframe { border: none; }
+    </style>
+    </head>
+	<body>
+	<div id="websitePath" data-websitepath="http://www.trinks.com/junior-hair"></div> <!-- Em Produção usar www.trinks.com -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script><style type="text/css"></style>
+    <script>
+        $(document).ready(function () {
+            $('.submit').click(function () {
+                var hotsite = $('#seletorDeHotsite').val();
+                if (hotsite.length > 1) {
+                    var url = $('#websitePath').attr('data-websitePath') + "/" + hotsite + "/framebusca?Dia=" + $('.data').val();
+                    window.open(url, '_blank', "width=980, height=640");
+                }
+            });
+        });
+    </script>
+
+
+
+    <div class="modeloLogin">
+
+        <h1>
+            <span class="logoGamarca"></span>
+            <span class="exemplo">Agenda Yroif</span>
+        </h1>
+        <div class="contentSite">
+            <div class="campos">
+                <label>Nome:</label>
+                <select id="seletorDeHotsite">
+                    <option value="" disabled="" selected="">-- selecione um estabelecimento --</option>
+                    <option value="meusalaotrinks">Yroif</option>
+                </select>
+            </div>
+            <div class="campos">
+                <label>Data:</label>
+                <input id="data" class="data" size="10" type="text" value="08/07/2014">
+            </div>
+            <div class="botoes">
+                <button class="submit" type="button">Buscar</button>
+            </div>
+        </div>
+    </div>
+<script>
+document.getElementById('data').value = new Date().toLocaleDateString('pt-BR')
+</script>
+
+</body></html>
